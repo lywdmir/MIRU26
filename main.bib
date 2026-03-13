@@ -1,0 +1,967 @@
+% Long form of conference & journal abbreviations -- especially for camera ready
+@String(PAMI  = {IEEE Trans. Pattern Anal. Mach. Intell.})
+@String(IJCV  = {Int. J. Comput. Vis.})
+@String(CVPR  = {IEEE Conf. Comput. Vis. Pattern Recog.})
+@String(ICCV  = {Int. Conf. Comput. Vis.})
+@String(ECCV  = {Eur. Conf. Comput. Vis.})
+@String(NeurIPS = {Adv. Neural Inform. Process. Syst.})
+@String(ICML  = {Int. Conf. Mach. Learn.})
+@String(ICLR  = {Int. Conf. Learn. Represent.})
+@String(ACCV  = {Asian Conf. Comput. Vis.})
+@String(BMVC  = {Brit. Mach. Vis. Conf.})
+@String(CVPRW = {IEEE Conf. Comput. Vis. Pattern Recog. Worksh.})
+@String(AAAI  = {AAAI})
+@String(IJCAI = {IJCAI})
+@String(ICIP  = {IEEE Int. Conf. Image Process.})
+@String(ICPR  = {Int. Conf. Pattern Recog.})
+@String(ICASSP=	{ICASSP})
+@String(ICME  = {Int. Conf. Multimedia and Expo})
+@String(JMLR  = {J. Mach. Learn. Res.})
+@String(TMLR  = {Trans. Mach. Learn Res.})
+@String(TOG   = {ACM Trans. Graph.})
+@String(TIP   = {IEEE Trans. Image Process.})
+@String(TVCG  = {IEEE Trans. Vis. Comput. Graph.})
+@String(TCSVT = {IEEE Trans. Circuit Syst. Video Technol.})
+@String(TMM   = {IEEE Trans. Multimedia})
+@String(ACMMM = {ACM Int. Conf. Multimedia})
+@String(PR    = {Pattern Recognition})
+
+@String(MNI	  = {Nature Mach. Intell.})
+@String(SPL	  = {IEEE Sign. Process. Letters})
+@String(VR    = {Vis. Res.})
+@String(JOV	  = {J. Vis.})
+@String(TVC   = {The Vis. Comput.})
+@String(JCST  = {J. Comput. Sci. Tech.})
+@String(CGF   = {Comput. Graph. Forum})
+@String(CVM   = {Computational Visual Media})
+
+
+% Short form of conference & journal abbreviations -- especially for submission version
+% if desired, remove these macros in favor of the above ones
+@String(PAMI  = {IEEE TPAMI})
+@String(IJCV  = {IJCV})
+@String(CVPR  = {CVPR})
+@String(ICCV  = {ICCV})
+@String(ECCV  = {ECCV})
+@String(NeurIPS = {NeurIPS})
+@String(ICML  = {ICML})
+@String(ICLR  = {ICLR})
+@String(ACCV  = {ACCV})
+@String(BMVC  =	{BMVC})
+@String(CVPRW = {CVPRW})
+@String(AAAI  = {AAAI})
+@String(IJCAI = {IJCAI})
+@String(ICIP  = {ICIP})
+@String(ICPR  = {ICPR})
+@String(ICASSP=	{ICASSP})
+@String(ICME  =	{ICME})
+@String(JMLR  = {JMLR})
+@String(TMLR  = {TMLR})
+@String(TOG   = {ACM TOG})
+@String(TIP   = {IEEE TIP})
+@String(TVCG  = {IEEE TVCG})
+@String(TCSVT = {IEEE TCSVT})
+@String(TMM   =	{IEEE TMM})
+@String(ACMMM = {ACM MM})
+@String(PR    = {PR})
+
+
+%%%%% ----- 拡散モデル ----- %%%%%
+
+% モデルそのもの
+
+@inproceedings{Ho2020,
+  title     = {{Denoising Diffusion Probabilistic Models}},
+  author    = {Ho, Jonathan and Jain, Ajay and Abbeel, Pieter},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2020}
+}
+
+@inproceedings{Song2021a,
+  title     = {{Denoising Diffusion Implicit Models}},
+  author    = {Jiaming Song and Chenlin Meng and Stefano Ermon},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2021}
+}
+
+@inproceedings{Song2021b,
+  title     = {{Score-Based Generative Modeling through Stochastic Differential Equations}},
+  author    = {Yang Song and Jascha Sohl-Dickstein and Diederik P Kingma and Abhishek Kumar and Stefano Ermon and Ben Poole},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2021}
+}
+
+@inproceedings{Sohl-Dickstein2015,
+  title     = {{Deep Unsupervised Learning using Nonequilibrium Thermodynamics}},
+  author    = {Sohl-Dickstein, Jascha and Weiss, Eric and Maheswaranathan, Niru and Ganguli, Surya},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2015}
+}
+
+@inproceedings{Rombach2022,
+  title     = {{High-resolution Image Synthesis with Latent Diffusion Models}},
+  author    = {Rombach, Robin and Blattmann, Andreas and Lorenz, Dominik and Esser, Patrick and Ommer, Bj{\"o}rn},
+  booktitle = {IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year      = {2022}
+}
+
+@inproceedings{Diepeveen2025,
+  title     = {Score-based Pullback Riemannian Geometry: Extracting the Data Manifold Geometry using Anisotropic Flows},
+  author    = {Willem Diepeveen and Georgios Batzolis and Zakhar Shumaylov and Carola-Bibiane Sch{\"o}nlieb},
+  booktitle = {International Conference on Machine Learning (ICML)},
+  year      = {2025}
+}
+
+% 拡散モデル x 補間 x 追加訓練・アーキテクチャあり
+
+@inproceedings{Hahm2024,
+  author    = {Hahm, Jaehoon and Lee, Junho and Kim, Sunghyun and Lee, Joonseok},
+  title     = {{Isometric representation learning for disentangled latent space of diffusion models}},
+  booktitle = {International Conference on Machine Learning (ICML)},
+  year      = {2024}
+}
+
+@inproceedings{Wang2023,
+  title     = {{Interpolating between Images with Diffusion Models}},
+  author    = {Clinton J. Wang and Polina Golland},
+  booktitle = {ICML 2023 Workshop on Challenges of Deploying Generative AI},
+  year      = {2023}
+}
+
+@inproceedings{Kaiwen2023,
+  title     = {{DiffMorpher: Unleashing the Capability of Diffusion Models for Image Morphing}},
+  author    = {Zhang, Kaiwen and Zhou, Yifan and Xu, Xudong and Pan, Xingang and Dai, Bo},
+  booktitle = {IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year      = {2023}
+}
+
+@inproceedings{Guo2024,
+  title     = {{Smooth Diffusion: Crafting Smooth Latent Spaces in Diffusion Models}},
+  author    = {Jiayi Guo and Xingqian Xu and Yifan Pu and Zanlin Ni and Chaofei Wang and Manushree Vasu and Shiji Song and Gao Huang and Humphrey Shi},
+  booktitle = {IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year      = {2024}
+}
+
+@inproceedings{Yang2024,
+  title     = {{IMPUS: Image Morphing with Perceptually-Uniform Sampling Using Diffusion Models}},
+  author    = {Zhaoyuan Yang and Zhengyang Yu and Zhiwei Xu and Jaskirat Singh and Jing Zhang and Dylan Campbell and Peter Tu and Richard Hartley},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2024}
+}
+
+@inproceedings{Shen2024,
+  title     = {{DreamMover: Leveraging the Prior of Diffusion Models for Image Interpolation with Large Motion}},
+  author    = {Liao Shen and Tianqi Liu and Huiqiang Sun and Xinyi Ye and Baopu Li and Jianming Zhang and Zhiguo Cao},
+  booktitle = {European Conference on Computer Vision (ECCV)},
+  year      = {2024}
+}
+
+@inproceedings{Konpat2022,
+  title     = {{Diffusion Autoencoders: Toward a Meaningful and Decodable Representation}},
+  author    = {Preechakul, Konpat and Chatthee, Nattanat and Wizadwongsa, Suttisak and Suwajanakorn, Supasorn},
+  booktitle = {IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year      = {2022}
+}
+
+@inproceedings{Kim2025,
+  title     = {{Diffusion Bridge AutoEncoders for Unsupervised Representation Learning}},
+  author    = {Yeongmin Kim and Kwanghyeon Lee and Minsang Park and Byeonghu Na and Il-chul Moon},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2025}
+}
+
+@inproceedings{Lu2024,
+  title     = {{Hierarchical Diffusion Autoencoders and Disentangled Image Manipulation}},
+  author    = {Zeyu Lu and Chengyue Wu and Xinyuan Chen and Yaohui Wang and Lei Bai and Yu Qiao and Xihui Liu},
+  booktitle = {IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
+  year      = {2024}
+}
+
+@inproceedings{Lobashev2025,
+  title     = {{Hessian Geometry of Latent Space in Generative Models}},
+  author    = {Alexander Lobashev and Dmitry Guskov and Maria Larchenko and Mikhail Tamm},
+  booktitle = {International Conference on Machine Learning (ICML)},
+  year      = {2025}
+} % 注意：情報幾何学を考えている（FIMの学習が MLP で新たに必要ではあるが）
+
+% 拡散モデル x 補間 x Training-free
+
+@inproceedings{He2024,
+  title     = {{AID: Attention Interpolation of Text-to-Image Diffusion}},
+  author    = {Qiyuan He and Jinghao Wang and Ziwei Liu and Angela Yao},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2024}
+}
+
+@inproceedings{Samuel2023,
+  title     = {{Norm-guided Latent Space Exploration for Text-to-image Generation}},
+  author    = {Dvir Samuel and Rami Ben-Ari and Nir Darshan and Haggai Maron and Gal Chechik},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2023}
+}
+
+@inproceedings{Zheng2024,
+  title     = {{NoiseDiffusion: Correcting Noise for Image Interpolation with Diffusion Models beyond Spherical Linear Interpolation}},
+  author    = {PengFei Zheng and Yonggang Zhang and Zhen Fang and Tongliang Liu and Defu Lian and Bo Han},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2024}
+}
+
+@inproceedings{Bodin2025,
+  title     = {{Linear Combinations of Latents in Generative Models: Subspaces and Beyond}},
+  author    = {Erik Bodin and Alexandru I. Stere and Dragos D Margineantu and Carl Henrik Ek and Henry Moss},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2025}
+}
+
+@inproceedings{Yu2025,
+  title     = {{Probability Density Geodesics in Image Diffusion Latent Space}},
+  author    = {Qingtao Yu and Jaskirat Singh and Zhaoyuan Yang and Peter Henry Tu and Jing Zhang and Hongdong Li and Richard Hartley and Dylan Campbell},
+  booktitle = {IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year      = {2025}
+}
+
+@article{Karczewski2025b,
+  title   = {{Spacetime Geometry of Denoising in Diffusion Models}},
+  journal = {arXiv},
+  author  = {Rafał Karczewski and Markus Heinonen and Alison Pouplin and Søren Hauberg and Vikas Garg},
+  year    = {2025}
+}
+
+@article{Azeglio2025,
+  title   = {{What's Inside Your Diffusion Model? A Score-Based Riemannian Metric to Explore the Data Manifold}},
+  journal = {arXiv},
+  author  = {Simone Azeglio and Arianna Di Bernardo},
+  year    = {2025}
+}
+
+% 拡散モデル x リーマン計量（だが，補間は困難）
+
+@inproceedings{Kwon2023,
+  title     = {{Diffusion Models Already Have A Semantic Latent Space}},
+  author    = {Mingi Kwon and Jaeseok Jeong and Youngjung Uh},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2023}
+}
+
+@inproceedings{Park2023a,
+  title     = {{Understanding the Latent Space of Diffusion Models through the Lens of Riemannian Geometry}},
+  author    = {Yong-Hyun Park and Mingi Kwon and Jaewoong Choi and Junghyo Jo and Youngjung Uh},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2023}
+}
+
+@article{Park2023b,
+  title   = {{Unsupervised Discovery of Semantic Latent Directions in Diffusion Models}},
+  author  = {Yong-Hyun Park and Mingi Kwon and Junghyo Jo and Youngjung Uh},
+  journal = {arXiv},
+  year    = {2023}
+}
+
+% 拡散モデル x 多様体
+
+@inproceedings{Wenliang2022,
+  title     = {{Score-based generative model learn manifold-like structures with constrained mixing}},
+  author    = {Li Kevin Wenliang and Ben Moran},
+  booktitle = {NeurIPS 2022 Workshop on Score-Based Methods},
+  year      = {2022}
+}
+
+@inproceedings{Pidstrigach2022,
+  author    = {Pidstrigach, Jakiw},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  title     = {{Score-Based Generative Models Detect Manifolds}},
+  year      = {2022}
+}
+
+@inproceedings{Tang2024,
+  title     = {{Adaptivity of Diffusion Models to Manifold Structures}},
+  author    = {Tang, Rong and Yang, Yun},
+  booktitle = {International Conference on Artificial Intelligence and Statistics (AISTATS)},
+  year      = {2024}
+}
+
+@article{Potaptchik2025,
+  title   = {{Linear Convergence of Diffusion Models Under the Manifold Hypothesis}},
+  author  = {Peter Potaptchik and Iskander Azangulov and George Deligiannidis},
+  year    = {2025},
+  journal = {arXiv}
+}
+
+@article{George2025,
+  title   = {{Analysis of Diffusion Models for Manifold Data}},
+  author  = {Anand Jerry George and Rodrigo Veiga and Nicolas Macris},
+  year    = {2025},
+  journal = {arXiv}
+}
+
+% 拡散モデル x 次元推定
+
+@inproceedings{Stanczuk2024,
+  title     = {{Diffusion Models Encode the Intrinsic Dimension of Data Manifolds}},
+  author    = {Jan Pawel Stanczuk and Georgios Batzolis and Teo Deveney and Carola-Bibiane Sch{\"o}nlieb},
+  booktitle = {International Conference on Machine Learning (ICML)},
+  year      = {2024}
+}
+
+@inproceedings{Ventura2025,
+  title     = {{Manifolds, Random Matrices and Spectral Gaps: The Geometric Phases of Generative Diffusion}},
+  author    = {Enrico Ventura and Beatrice Achilli and Gianluigi Silvestri and Carlo Lucibello and Luca Ambrogioni},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2025}
+}
+
+@inproceedings{Humayun2025,
+  title     = {{What Secrets Do Your Manifolds Hold? Understanding the Local Geometry of Generative Models}},
+  author    = {Ahmed Imtiaz Humayun and Ibtihel Amara and Cristina Nader Vasconcelos and Deepak Ramachandran and Candice Schumann and Junfeng He and Katherine A Heller and Golnoosh Farnadi and Negar Rostamzadeh and Mohammad Havaei},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2025}
+}
+
+@inproceedings{Horvat2024,
+  title     = {{On Gauge Freedom, Conservativity and Intrinsic Dimensionality Estimation in Diffusion models}},
+  author    = {Christian Horvat and Jean-Pascal Pfister},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2024}
+}
+
+@inproceedings{Kamkari2024,
+  title     = {{A Geometric View of Data Complexity: Efficient Local Intrinsic Dimension Estimation with Diffusion Models}},
+  author    = {Hamidreza Kamkari and Brendan Leigh Ross and Rasa Hosseinzadeh and Jesse C. Cresswell and Gabriel Loaiza-Ganem},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2024}
+}
+
+% 拡散モデル x その他
+
+@article{Luo2022,
+  title   = {{Understanding Diffusion Models: A Unified Perspective}},
+  author  = {Calvin Luo},
+  journal = {arXiv},
+  year    = {2022}
+}
+
+@inproceedings{Karczewski2025a,
+  title     = {{Devil is in the Details: Density Guidance for Detail-Aware Generation with Flow Models}},
+  author    = {Rafal Karczewski and Markus Heinonen and Vikas K Garg},
+  booktitle = {International Conference on Machine Learning (ICML)},
+  year      = {2025}
+} % 画像の log-likelyhood が高いと画像のディテールが失われる
+
+@inproceedings{Deschenaux2024,
+  title     = {{Going beyond Compositions, DDPMs Can Produce Zero-Shot Interpolations}},
+  author    = {Justin Deschenaux and Igor Krawczuk and Grigorios G. Chrysos and Volkan Cevher},
+  booktitle = {International Conference on Machine Learning (ICML)},
+  year      = {2024}
+} % 拡散モデルが高い補間能力を持つことを示した
+
+@inproceedings{Mokady2023,
+  title     = {{Null-text Inversion for Editing Real Images using Guided Diffusion Models}},
+  author    = {Ron Mokady and Amir Hertz and Kfir Aberman and Yael Pritch and Daniel Cohen-Or},
+  year      = {2023},
+  booktitle = {IEEE/CVF Conference on Computer Vision and Pattern Recognition, CVPR 2023}
+} % Inversion で代表的な論文
+
+@inproceedings{Hertz2023,
+  author    = {Amir Hertz and Ron Mokady and Jay Tenenbaum and Kfir Aberman and Yael Pritch and Daniel Cohen-Or},
+  title     = {{Prompt-to-Prompt Image Editing with Cross-Attention Control}},
+  year      = {2023},
+  booktitle = {International Conference on Learning Representations (ICLR)}
+} % Editing で代表的な論文
+
+@inproceedings{Danier2024,
+  author    = {Danier, Duolikun and Zhang, Fan and Bull, David},
+  title     = {{LDMVFI: video frame interpolation with latent diffusion models}},
+  year      = {2024},
+  booktitle = {AAAI Conference on Artificial Intelligence (AAAI)}
+} % Video Interpolaition で代表的な論文
+
+@inproceedings{Yun2024,
+  title     = {{Denoising} for {Manifold Extrapolation}},
+  author    = {Zeyu Yun and Galen Chuang and Derek Dong and Yubei Chen},
+  booktitle = {NeurIPS 2024 Workshop on Scientific Methods for Understanding Deep Learning (SciForDL)},
+  year      = {2024}
+} % スコアの差で外挿
+
+%%%%% ----- VAE / GAN ----- %%%%%
+
+% VAE / GAN
+
+@inproceedings{Kingma2014,
+  author    = {Kingma, Diederik P. and Welling, Max},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  title     = {{Auto-Encoding Variational Bayes}},
+  year      = {2014}
+}
+
+@inproceedings{Goodfellow2014,
+  author    = {Goodfellow, Ian and Pouget-Abadie, Jean and Mirza, Mehdi and Xu, Bing and Warde-Farley, David and Ozair, Sherjil and Courville, Aaron and Bengio, Yoshua},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  title     = {{Generative Adversarial Nets}},
+  year      = {2014}
+}
+
+% 潜在空間 x 線形 x Training-free
+
+@inproceedings{Shen2020,
+  title     = {{Interpreting the Latent Space of GANs for Semantic Face Editing}},
+  author    = {Shen, Yujun and Gu, Jinjin and Tang, Xiaoou and Zhou, Bolei},
+  booktitle = {IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year      = {2020}
+}
+
+@inproceedings{Shen2021,
+  title     = {{Closed-form Factorization of Latent Semantics in GANs}},
+  author    = {Shen, Yujun and Zhou, Bolei},
+  booktitle = {IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year      = {2021}
+}
+
+@inproceedings{Harkonen2020,
+  title     = {{GANSpace: Discovering Interpretable GAN Controls}},
+  author    = {Erik Härkönen and Aaron Hertzmann and Jaakko Lehtinen and Sylvain Paris},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2020}
+}
+
+@inproceedings{Plumerault2020,
+  title     = {{Controlling generative models with continuous factors of variations}},
+  author    = {Antoine Plumerault and Hervé Le Borgne and Céline Hudelot},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2020}
+}
+
+@inproceedings{Zhuang2021,
+  title     = {{Enjoy Your Editing: Controllable GANs} for Image Editing via Latent Space Navigation},
+  author    = {Peiye Zhuang and Oluwasanmi O Koyejo and Alex Schwing},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2021}
+}
+
+@inproceedings{Oldfield2021,
+  title     = {{Tensor Component Analysis for Interpreting the Latent Space of GANs}},
+  author    = {James Oldfield and Markos Georgopoulos and Yannis Panagakis and Mihalis A. Nicolaou and Ioannis Patras},
+  booktitle = {British Machine Vision Conference (BMVC)},
+  year      = {2021}
+}
+
+@inproceedings{Spingarn2021,
+  title     = {{GAN} ''Steerability'' without optimization},
+  author    = {Nurit Spingarn and Ron Banner and Tomer Michaeli},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2021}
+} % 非線形もいける
+
+% 潜在空間 x 線形 x 追加訓練・アーキテクチャあり
+
+@inproceedings{Voynov2020,
+  author    = {Voynov, Andrey and Babenko, Artem},
+  title     = {{Unsupervised discovery of interpretable directions in the GAN latent space}},
+  year      = {2020},
+  booktitle = {International Conference on Machine Learning (ICML)}
+}
+
+@inproceedings{Goetschalckx2019,
+  title     = {{GANalyze: Toward Visual Definitions of Cognitive Image Properties}},
+  author    = {Goetschalckx, Lore and Andonian, Alex and Oliva, Aude and Isola, Phillip},
+  booktitle = {IEEE/CVF International Conference on Computer Vision (ICCV)},
+  year      = {2019}
+}
+
+@inproceedings{Haas2022,
+  title     = {{Tensor-based Emotion Editing in the StyleGAN Latent Space}},
+  author    = {René Haas and Stella Graßhof and Sami S. Brandt},
+  booktitle = {CVPR 2022 Workshop on AI for Content Creation Workshop},
+  year      = {2022}
+}
+
+% 潜在空間 x 非線形
+
+@inproceedings{Jahanian2020,
+  author    = {Ali Jahanian and Lucy Chai and Phillip Isola},
+  title     = {{On the "steerability" of generative adversarial networks}},
+  booktitle = {International Conference on Learning Representations, {(ICLR)}},
+  year      = {2020}
+}
+
+@inproceedings{Tzelepis2021,
+  author    = {Tzelepis, Christos and Tzimiropoulos, Georgios and Patras, Ioannis},
+  booktitle = {IEEE/CVF International Conference on Computer Vision (ICCV)},
+  title     = {{WarpedGANSpace: Finding non-linear RBF paths in GAN latent space}},
+  year      = {2021}
+}
+
+@inproceedings{Tewari2020,
+  title     = {{StyleRig: Rigging StyleGAN for 3D Control Over Portrait Images}},
+  author    = {Ayush Kumar Tewari and Mohamed A. Elgharib and Gaurav Bharaj and Florian Bernard and Hans-Peter Seidel and Patrick P{\'e}rez and Michael Zollh{\"o}fer and Christian Theobalt},
+  booktitle = {IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year      = {2020}
+}
+
+@inproceedings{Khrulkov2021,
+  title     = {{Latent Transformations via NeuralODEs for GAN-based Image Editing}},
+  author    = {Valentin Khrulkov and Leyla Mirvakhabova and I. Oseledets and Artem Babenko},
+  booktitle = {IEEE/CVF International Conference on Computer Vision (ICCV)},
+  year      = {2021}
+}
+
+@inproceedings{Liang2021,
+  author    = {Liang, Hanbang and Hou, Xianxu and Shen, Linlin},
+  title     = {{SSFlow: Style-guided Neural Spline Flows for Face Image Manipulation}},
+  year      = {2021},
+  booktitle = {ACM International Conference on Multimedia}
+}
+
+@article{Ramesh2019,
+  title   = {{A Spectral Regularizer for Unsupervised Disentanglement}},
+  author  = {Aditya Ramesh and Youngduck Choi and Yann LeCun},
+  year    = {2019},
+  journal = {arXiv}
+}
+
+@inproceedings{Choi2022,
+  title     = {{Do Not Escape From the Manifold: Discovering the Local Coordinates on the Latent Space of {GAN}s}},
+  author    = {Jaewoong Choi and Junho Lee and Changyeon Yoon and Jung Ho Park and Geonho Hwang and Myungjoo Kang},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2022}
+}
+
+@inproceedings{Chen2022,
+  author    = {Chen, Zikun and Jiang, Ruowei and Duke, Brendan and Zhao, Han and Aarabi, Parham},
+  title     = {{{Exploring Gradient-Based Multi-directional Controls in GANs}}},
+  booktitle = {European Conference on Computer Vision (ECCV)},
+  year      = {2022}
+}
+
+@article{Abdal2021,
+  author  = {Abdal, Rameen and Zhu, Peihao and Mitra, Niloy J. and Wonka, Peter},
+  title   = {{StyleFlow: Attribute-Conditioned Exploration of StyleGAN-Generated Images Using Conditional Continuous Normalizing Flows}},
+  year    = {2021},
+  journal = {ACM Transactions on Graphics}
+}
+
+@inproceedings{Aoshima2023,
+  author    = {Aoshima, Takehiro and Matsubara, Takashi},
+  booktitle = {IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  title     = {{Deep Curvilinear Editing: Commutative and Nonlinear Image Manipulation for Pretrained Deep Generative Model}},
+  year      = {2023}
+}
+
+% リーマン計量 x Pullback
+
+@inproceedings{Shao2017,
+  title     = {{The Riemannian Geometry of Deep Generative Models}},
+  author    = {Hang Shao and Abhishek Kumar and P. Thomas Fletcher},
+  booktitle = {IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW)},
+  year      = {2017}
+}
+
+@inproceedings{Chen2018,
+  title     = {{Metrics for Deep Generative Models}},
+  author    = {Chen, Nutan and Klushyn, Alexej and Kurle, Richard and Jiang, Xueyan and Bayer, Justin and Smagt, Patrick},
+  booktitle = {International Conference on Artificial Intelligence and Statistics (AISTATS)},
+  year      = {2018}
+}
+
+@inproceedings{Arvanitidis2018,
+  title     = {{Latent Space Oddity: on the Curvature of Deep Generative Models}},
+  author    = {Georgios Arvanitidis and Lars Kai Hansen and Søren Hauberg},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2018}
+}
+
+@inproceedings{Arvanitidis2021,
+  title     = {{Geometrically Enriched Latent Spaces}},
+  author    = {Arvanitidis, Georgios and Hauberg, S{\o}ren and Sch{\"o}lkopf, Bernhard},
+  booktitle = {International Conference on Artificial Intelligence and Statistics (AISTATS)},
+  year      = {2021}
+}
+
+% リーマン計量 x 学習必要
+
+@article{Yang2018,
+  title   = {{Geodesic Clustering in Deep Generative Models}},
+  author  = {Tao Yang and Georgios Arvanitidis and Dongmei Fu and Xiaogang Li and Søren Hauberg},
+  year    = {2018},
+  journal = {arXiv}
+}
+
+@inproceedings{Kalatzsis2020,
+  author    = {Kalatzis, Dimitris and Eklund, David and Arvanitidis, Georgios and Hauberg, S\o{}ren},
+  title     = {{Variational autoencoders with Riemannian Brownian motion prior}},
+  year      = {2020},
+  booktitle = {International Conference on Machine Learning}
+} % VAE の潜在空間に Brownian motion prior を導入
+
+@inproceedings{Arvanitidis2022,
+  title     = {{A Prior-Based Approximate Latent Riemannian Metric}},
+  author    = {Arvanitidis, Georgios and Georgiev, Bogdan M. and Sch\"olkopf, Bernhard},
+  booktitle = {International Conference on Artificial Intelligence and Statistics (AISTATS)},
+  year      = {2022}
+} % Conformal metric を学習（これも密度ベースと言えばそう）
+
+@inproceedings{Lee2022,
+  title     = {{A Statistical Manifold Framework for Point Cloud Data}},
+  author    = {Lee, Yonghyeon and Kim, Seungyeon and Choi, Jinwon and Park, Frank},
+  booktitle = {International Conference on Machine Learning (ICML)},
+  year      = {2022}
+} % 注意：データ空間で FIM を学習して潜在空間に pullback
+
+% リーマン計量 x その他
+@inproceedings{Sorrenson2025,
+  title     = {Learning Distances from Data with Normalizing Flows and Score Matching},
+  author    = {Peter Sorrenson and Daniel Behrend-Uriarte and Christoph Schn{\"o}rr and Ullrich K{\"o}the},
+  booktitle = {International Conference on Machine Learning (ICML)},
+  year      = {2025}
+} % NF で学習した密度を使ってリーマン計量を構築，モデル構造や損失関数に変更はないので学習不要
+
+@article{Bethune2025,
+  title   = {{Follow the Energy, Find the Path: Riemannian Metrics from Energy-Based Models}},
+  author  = {Louis Béthune and David Vigouroux and Yilun Du and Rufin VanRullen and Thomas Serre and Victor Boutin},
+  year    = {2025},
+  journal = {arXiv}
+}
+
+%　その他
+@inproceedings{Radford2016,
+  author    = {Alec Radford and Luke Metz and Soumith Chintala},
+  title     = {{Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks}},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2016}
+} % GAN の潜在変数を操作する元祖論文
+
+%%%%% ----- 多様体仮説 ----- %%%%%
+
+@article{Fefferman2016,
+  title   = {Testing the Manifold Hypothesis},
+  author  = {Charles Fefferman and Sanjoy K. Mitter and Hariharan Narayanan},
+  year    = {2016},
+  journal = {Journal of the American Mathematical Society}
+} % スコア関数で次元推定する論文は多様体仮説の文章でこれだけしか引用していない
+
+@article{Bengio2012,
+  title   = {{Representation Learning: A Review and New Perspectives}},
+  author  = {Yoshua Bengio and Aaron C. Courville and Pascal Vincent},
+  journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  year    = {2012}
+}
+
+@article{Tenenbaum2000,
+  title   = {{A Global Geometric Framework for Nonlinear Dimensionality Reduction}},
+  author  = {Tenenbaum, Joshua B. and de Silva, Vin and Langford, John C.},
+  journal = {Science},
+  year    = {2000}
+}
+
+@article{Roweis2000,
+  title   = {{Nonlinear Dimensionality Reduction by Locally Linear Embedding}},
+  author  = {Roweis, Sam T. and Saul, Lawrence K.},
+  journal = {Science},
+  year    = {2000}
+}
+
+@article{Loaiza-ganem2024,
+  title   = {{Deep Generative Models through the Lens of the Manifold Hypothesis: A Survey and New Connections}},
+  author  = {Gabriel Loaiza-Ganem and Brendan Leigh Ross and Rasa Hosseinzadeh and Anthony L. Caterini and Jesse C. Cresswell},
+  journal = {Transactions on Machine Learning Research},
+  year    = {2024}
+} % DGMs における多様体仮説
+
+@inproceedings{Arjovsky2017,
+  title     = {{Towards Principled Methods for Training Generative Adversarial Networks}},
+  author    = {Martin Arjovsky and Leon Bottou},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2017}
+} % GAN の潜在空間のデコーダの像が低次元多様体であることを示した
+
+%%%%% ----- 評価指標 ----- %%%%%
+
+@inproceedings{Szegedy2015,
+  title     = {{Rethinking the Inception Architecture for Computer Vision}},
+  author    = {Christian Szegedy and Vincent Vanhoucke and Sergey Ioffe and Jonathon Shlens and Zbigniew Wojna},
+  booktitle = {IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year      = {2015}
+} % FID
+
+@inproceedings{Martin2017,
+  author    = {Heusel, Martin and Ramsauer, Hubert and Unterthiner, Thomas and Nessler, Bernhard and Hochreiter, Sepp},
+  title     = {{GANs trained by a two time-scale update rule converge to a local Nash equilibrium}},
+  year      = {2017},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)}
+} % Inception v3 の重み
+
+@inproceedings{Zhang2018,
+  title     = {{The Unreasonable Effectiveness of Deep Features as a Perceptual Metric}},
+  author    = {Zhang, Richard and Isola, Phillip and Efros, Alexei A and Shechtman, Eli and Wang, Oliver},
+  booktitle = {IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year      = {2018}
+} % LPIPS
+
+@inproceedings{Karras2018b,
+  author    = {Karras, Tero and Laine, Samuli and Aila, Timo},
+  title     = {A Style-Based Generator Architecture for Generative Adversarial Networks},
+  year      = {2018},
+  booktitle = {IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}
+} % PDV を提案
+
+%%%%% ----- データセット ----- %%%%%
+
+@inproceedings{Karras2018,
+  title     = {{Progressive Growing of GANs for Improved Quality, Stability, and Variation}},
+  author    = {Tero Karras and Timo Aila and Samuli Laine and Jaakko Lehtinen},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2018}
+} % CelebA-HQ
+
+@inproceedings{Choi2022b,
+  title     = {{StarGAN v2: Diverse Image Synthesis for Multiple Domains}},
+  author    = {Yunjey Choi and Youngjung Uh and Jaejun Yoo and Jung-Woo Ha},
+  booktitle = {IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year      = {2020}
+} % AFHQ
+
+@misc{Santana2022,
+  title        = {{Gustavosta/Stable-Diffusion-Prompts {$\cdot$} Datasets at Hugging Face}},
+  author       = {Santana, Gustavo},
+  year         = {2022},
+  howpublished = {\url{https://huggingface.co/datasets/Gustavosta/Stable-Diffusion-Prompts}}
+} % Stable Diffusion Prompt Dataset
+
+%%%%% ----- 最適化 ----- %%%%%
+
+@inproceedings{Kingma2015,
+  author    = {Diederik P. Kingma and Jimmy Ba},
+  title     = {{Adam: A Method for Stochastic Optimization}},
+  booktitle = {{International Conference on Learning Representations (ICLR)}},
+  year      = {2015}
+} % Adam
+
+@inproceedings{Loshchilov2017,
+  author    = {Loshchilov, Ilya and Hutter, Frank},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  title     = {{SGDR: Stochastic Gradient Descent with Warm Restarts}},
+  year      = {2017}
+} % AdamW
+
+@article{Elfwing2017,
+  title   = {{Sigmoid-Weighted Linear Units for Neural Network Function Approximation in Reinforcement Learning}},
+  author  = {Stefan Elfwing and Eiji Uchibe and Kenji Doya},
+  year    = {2017},
+  journal = {arXiv}
+} % SiLU
+
+%%%%% ----- その他 ----- %%%%%
+
+@inproceedings{Du2019,
+  title     = {{Implicit Generation and Generalization in Energy-Based Models}},
+  author    = {Yilun Du and Igor Mordatch},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2019}
+} % EBMs
+
+@inproceedings{Rezende2015,
+  author    = {Rezende, Danilo Jimenez and Mohamed, Shakir},
+  title     = {{Variational inference with normalizing flows}},
+  year      = {2015},
+  booktitle = {International Conference on Machine Learning (ICML)}
+} % NF
+
+% Geodesic Diffusion の Trick 系
+
+@inproceedings{Li2022,
+  title     = {{BLIP: Bootstrapping Language-Image Pre-training for Unified Vision-Language Understanding and Generation}},
+  author    = {Junnan Li and Dongxu Li and Caiming Xiong and Steven Hoi},
+  year      = {2022},
+  booktitle = {International Conference on Machine Learning (ICML)}
+}
+
+@inproceedings{Radford2021,
+  title     = {{Learning transferable visual models from natural language supervision}},
+  author    = {Radford, Alec and Kim, Jong Wook and Hallacy, Chris and Ramesh, Aditya and Goh, Gabriel and Agarwal, Sandhini and Sastry, Girish and Askell, Amanda and Mishkin, Pamela and Clark, Jack and others},
+  booktitle = {International Conference on Machine Learning (ICML)},
+  year      = {2021}
+}
+
+@inproceedings{Loshchilov2019,
+  title     = {{Decoupled Weight Decay Regularization}},
+  author    = {Ilya Loshchilov and Frank Hutter},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2019}
+}
+
+@inproceedings{Song2019,
+  title     = {{Generative modeling by estimating gradients of the data distribution}},
+  author    = {Song, Yang and Ermon, Stefano},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2019}
+}
+
+@inproceedings{Katzir2024,
+  title     = {{Noise-free Score Distillation}},
+  author    = {Katzir, Oren and Patashnik, Or and Cohen-Or, Daniel and Lischinski, Dani},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2024}
+}
+
+@inproceedings{Poole2023,
+  title     = {{DreamFusion: Text-to-3D using 2D Diffusion}},
+  author    = {Poole, Ben and Jain, Ajay and Barron, Jonathan T and Mildenhall, Ben},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2023}
+}
+
+@inproceedings{Ho2021,
+  title     = {{Classifier-Free Diffusion Guidance}},
+  author    = {Ho, Jonathan and Salimans, Tim},
+  booktitle = {NeurIPS 2021 Workshop on Deep Generative Models and Downstream Applications},
+  year      = {2021}
+}
+
+@inproceedings{Gal2023,
+  title     = {{An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion}},
+  author    = {Rinon Gal and Yuval Alaluf and Yuval Atzmon and Or Patashnik and Amit Haim Bermano and Gal Chechik and Daniel Cohen-Or},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2023}
+} % textual inversion
+
+@article{Shoemake1985,
+  title   = {{Animating Rotation with Quaternion Curves}},
+  author  = {Ken Shoemake},
+  journal = {Conference on Computer Graphics and Interactive Techniques (SIGGRAPH)},
+  year    = {1985}
+} % 元祖 SLERP
+
+@article{Gruffaz2025,
+  title   = {{Riemannian Metric Learning: Closer to You than You Imagine}},
+  author  = {Samuel Gruffaz and Josua Sassen},
+  journal = {arXiv},
+  year    = {2025}
+} % リーマン計量学習のサーベイ論文
+
+@book{Lee2019,
+  title     = {{Introduction to Riemannian Manifolds}},
+  author    = {John M. Lee},
+  publisher = {Springer},
+  year      = {2019}
+} % リーマン幾何の教科書
+
+@inproceedings{Charpiat2019,
+  author    = {Charpiat, Guillaume and Girard, Nicolas and Felardos, Loris and Tarabalka, Yuliya},
+  booktitle = {Advances in {{Neural Information Processing Systems}} ({{NeurIPS}})},
+  title     = {Input {{Similarity}} from the {{Neural Network Perspective}}},
+  year      = {2019}
+}
+
+@inproceedings{Hanawa2021,
+  author    = {Hanawa, Kazuaki and Yokoi, Sho and Hara, Satoshi and Inui, Kentaro},
+  booktitle = {{{International Conference}} on {{Learning Representations}} ({{ICLR}})},
+  title     = {Evaluation of {{Similarity-based Explanations}}},
+  year      = {2021}
+}
+
+@inproceedings{Yeh2018,
+  author    = {Yeh, Chih-Kuan and Kim, Joon Sik and Yen, Ian E. H. and Ravikumar, Pradeep},
+  booktitle = {Advances in {{Neural Information Processing Systems}} ({{NeurIPS}})},
+  title     = {Representer {{Point Selection}} for {{Explaining Deep Neural Networks}}},
+  year      = {2018}
+}
+
+@inproceedings{Ronneberger2015,
+  author    = {Ronneberger, Olaf and Fischer, Philipp and Brox, Thomas},
+  booktitle = {Medical Image Computing and Computer-Assisted Intervention (MICCAI)},
+  title     = {U-Net: Convolutional Networks for Biomedical Image Segmentation},
+  year      = {2015}
+}
+
+@inproceedings{Dosovitskiy2020,
+  author    = {Dosovitskiy, Alexey and Beyer, Lucas and Kolesnikov, Alexander and Weissenborn, Dirk and Zhai, Xiaohua and Unterthiner, Thomas and Dehghani, Mostafa and Minderer, Matthias and Heigold, Georg and Gelly, Sylvain and Uszkoreit, Jakob and Houlsby, Neil},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  title     = {An {{Image}} is {{Worth}} 16x16 {{Words}}: {{Transformers}} for {{Image Recognition}} at {{Scale}}},
+  year      = {2020}
+}
+
+@article{Zhu2024,
+  author  = {Tianyi Zhu and Dongwei Ren and Qilong Wang and Xiaohe Wu and Wangmeng Zuo},
+  journal = {arXiv},
+  title   = {Generative Inbetweening through Frame-wise Conditions-Driven Video Generation},
+  year    = {2024}
+}
+
+@article{Zhou2018,
+  author  = {Zhou, Tinghui and Tucker, Richard and Flynn, John and Fyffe, Graham and Snavely, Noah},
+  journal = {ACM Transactions on Graphics (TOG)},
+  title   = {Stereo Magnification: Learning View Synthesis using Multiplane Images},
+  year    = {2018}
+}
+
+@inproceedings{Perazzi2016,
+  author    = {Perazzi, Federico and Pont-Tuset, Jordi and McWilliams, Brian and Van Gool, Luc and Gross, Markus and Sorkine-Hornung, Alexander},
+  booktitle = {IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  title     = {A Benchmark Dataset and Evaluation Methodology for Video Object Segmentation},
+  year      = {2016}
+}
+
+
+
+@inproceedings{Chung2025,
+  author    = {Chung, Hyungjin and Kim, Jeongsol and Park, Geon Yeong and Nam, Hyelin and Ye, Jong Chul},
+  booktitle = {International {{Conference}} on {{Learning Representations}} ({{ICLR}})},
+  year      = {2025},
+  title     = {{{CFG}}++: {{Manifold-constrained Classifier Free Guidance}} for {{Diffusion Models}}}
+}
+
+
+@inproceedings{Kwon2025,
+  author    = {Mingi Kwon and Shin seong Kim and Jaeseok Jeong and Yi Ting Hsiao and Youngjung Uh},
+  booktitle = {{{IEEE}}/{{CVF Conference}} on {{Computer Vision}} and {{Pattern Recognition}} ({{CVPR}})},
+  year      = {2025},
+  title     = {{{TCFG}}: {{Tangential Damping Classifier-free Guidance}}}
+}
+
+@inproceedings{Sueyoshi2024,
+  author    = {Sueyoshi, Kota and Matsubara, Takashi},
+  booktitle = {{{IEEE}}/{{CVF Conference}} on {{Computer Vision}} and {{Pattern Recognition}} ({{CVPR}})},
+  title     = {Predicated {{Diffusion}}: {{Predicate Logic-Based Attention Guidance}} for {{Text-to-Image Diffusion Models}}},
+  year      = 2024
+}
+
+
+@inproceedings{Chefer2023,
+  author    = {Chefer, Hila and Alaluf, Yuval and Vinker, Yael and Wolf, Lior and {Cohen-Or}, Daniel},
+  booktitle = {{{ACM SIGGRAPH}}},
+  title     = {Attend-and-{{Excite}}: {{Attention-Based Semantic Guidance}} for {{Text-to-Image Diffusion Models}}},
+  year      = {2023}
+}
+
+@inproceedings{Rassin2023,
+  author    = {Rassin, Royi and Hirsch, Eran and Glickman, Daniel and Ravfogel, Shauli and Goldberg, Yoav and Chechik, Gal},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  title     = {Linguistic {{Binding}} in {{Diffusion Models}}: {{Enhancing Attribute Correspondence}} through {{Attention Map Alignment}}},
+  year      = {2023}
+}
+
+@inproceedings{Lin2014,
+  title     = {Microsoft {{COCO}}: {{Common Objects}} in {{Context}}},
+  author    = {Tsung-Yi Lin and Michael Maire and Serge J. Belongie and James Hays and Pietro Perona and Deva Ramanan and Piotr Doll{\'a}r and C. Lawrence Zitnick},
+  booktitle = {European Conference on Computer Vision (ECCV)},
+  year      = {2014}
+}
+
+
+
+@article{Luo2023,
+  author  = {Simian Luo and Yiqin Tan and Longbo Huang and Jian Li and Hang Zhao},
+  journal = {arXiv},
+  title   = {Latent Consistency Models: Synthesizing High-Resolution Images with Few-Step Inference},
+  year    = {2023}
+}
+
+
+@misc{von-platen-etal-2022-diffusers,
+  author       = {Patrick von Platen and Suraj Patil and Anton Lozhkov and Pedro Cuenca and Nathan Lambert and Kashif Rasul and Mishig Davaadorj and Dhruv Nair and Sayak Paul and William Berman and Yiyi Xu and Steven Liu and Thomas Wolf},
+  howpublished = {\url{https://github.com/huggingface/diffusers}},
+  journal      = {GitHub repository},
+  publisher    = {GitHub},
+  title        = {Diffusers: State-of-the-art diffusion models},
+  year         = {2022}
+}

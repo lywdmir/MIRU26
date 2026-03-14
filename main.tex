@@ -94,24 +94,24 @@
 %     \label{fig:concept}
 % \end{figure}
 
-% \begin{figure*}[!ht]
-%     \centering
-%     \footnotesize
-%     \setlength{\tabcolsep}{2pt}
-%     \begin{tabular}{ccc}
-%         \includegraphics[width=0.25\textwidth]{assets/concept/geodesic.pdf} &
-%         \includegraphics[width=0.32\textwidth]{assets/concept/density.pdf} &
-%         \includegraphics[width=0.4\textwidth]{assets/concept/metric.pdf} \\
-%         (a) & (b) & (c)
-%     \end{tabular}
-%     \caption{
-%         \textbf{概念図.}
-%         (a) C字形分布上の補間経路．
-%         (b) 各手法の確率密度の遷移．
-%         (c) スコア関数のヤコビアン $J_{x_t}$ のスペクトル構造が接空間 $\mathcal{T}_{x_t}\mathcal{M}_t$ と法空間 $\mathcal{N}_{x_t}\mathcal{M}_t$ を分離する．
-%     }
-%     \label{fig:concept_wide}
-% \end{figure*}
+\begin{figure*}[!ht]
+    \centering
+    \footnotesize
+    \setlength{\tabcolsep}{2pt}
+    \begin{tabular}{ccc}
+        \includegraphics[width=0.25\textwidth]{assets/concept/geodesic.pdf} &
+        \includegraphics[width=0.32\textwidth]{assets/concept/density.pdf} &
+        \includegraphics[width=0.4\textwidth]{assets/concept/metric.pdf} \\
+        (a) & (b) & (c)
+    \end{tabular}
+    \caption{
+        \textbf{概念図.}
+        (a) C字形分布上の補間経路．
+        (b) 各手法の確率密度の遷移．
+        (c) スコア関数のヤコビアン $J_{x_t}$ のスペクトル構造が接空間 $\mathcal{T}_{x_t}\mathcal{M}_t$ と法空間 $\mathcal{N}_{x_t}\mathcal{M}_t$ を分離する．
+    }
+    \label{fig:concept_wide}
+\end{figure*}
 
 \section*{概要}
 拡散モデルは明示的で扱いやすい低次元潜在空間を持たないため，データ多様体を考慮した操作が困難である．
@@ -148,8 +148,6 @@ VAE~\cite{Kingma2014}やGAN~\cite{Goodfellow2014}は，データ多様体を陽�
 提案計量の接線・法線分解を用いて，Classifier-Free Guidance（CFG）~\cite{Ho2021}によるサンプルの多様体からの逸脱を抑制する．
 この補正はCLIPスコアを維持しつつFIDを一貫して改善し，蒸留モデルにも追加コストなく適用できる．
 
-\clearpage
-
 \section{関連研究}
 
 \subsection{深層生成モデルのリーマン幾何}
@@ -179,8 +177,6 @@ $t>0$ におけるノイズサンプルの空間はしばしばノイズ空間�
 この問題を緩和するために，CFG++~\cite{Chung2025} は再ノイズ化ステップに無条件スコアを用い，TCFG~\cite{Kwon2025} は SVD により無条件スコアを条件付きスコアと共有する部分空間へ射影する．
 これらの手法はデータ多様体の存在に動機付けられているが，その幾何を形式的に定義・特徴付けるものではなく，補正はヒューリスティックにとどまる．
 本手法はこのような幾何的特性付けを提供し，ガイダンス項を接線成分と法線成分に分解して後者を抑制するという幾何学的に根拠のある補正を可能にする．
-
-\clearpage
 
 \section{提案手法}
 
@@ -306,8 +302,6 @@ $G_{x_t} = J_{x_t}^\top J_{x_t}$ との積はヤコビアン・ベクトル積�
 補正全体でスコア関数の追加評価は4回であり，計算コストはCFGなしの場合の約3倍である．
 また，補正はガイダンス項のみを修正するため，蒸留時に適用することで，推論コストを増やさずに品質向上を学生モデルに継承できる．
 
-\clearpage
-
 \section{実験}
 
 本稿で提案したリーマン計量（式~\ref{eq:jacobian_metric}）の妥当性を，画像補間による大域的幾何と，ガイダンス補正による局所的幾何の二つの角度から検証する．
@@ -328,82 +322,66 @@ Stable Diffusion v2.1-base~\cite{Rombach2022}（$T=50$）を基盤とし，Morph
 比較手法は LERP~\cite{Ho2020}，SLERP~\cite{Song2021a}，NAO~\cite{Samuel2023}，NoiseDiff~\cite{Zheng2024}，FIM計量~\cite{Azeglio2025}，GeoDiff~\cite{Yu2025} である．
 評価指標は Perceptual Path Length（PPL），Perceptual Distance Variance（PDV），FID~\cite{Martin2017}，再構成誤差（RE）の4種類である．
 
-% \begin{table*}[t]
-%     \centering
-%     \scriptsize
-%     \caption{画像補間の定量評価結果．\textbf{太字}が最良，\underline{下線}が次点．}
-%     \label{tab:main_results}
-%     \setlength{\tabcolsep}{1.99pt}
-%     \begin{tabular}{l cccc cccc cccc cccc}
-%         \toprule
-%         \textbf{手法} &
-%             \multicolumn{4}{c}{\textbf{PPL} $\downarrow$} &
-%             \multicolumn{4}{c}{\textbf{PDV} $\downarrow$} &
-%             \multicolumn{4}{c}{\textbf{FID} $\downarrow$} &
-%             \multicolumn{4}{c}{\textbf{RE} $\downarrow$ $(\times10^{-3})$} \\
-%         \cmidrule(lr){2-5}\cmidrule(lr){6-9}\cmidrule(lr){10-13}\cmidrule(lr){14-17}
-%          & MB(A) & MB(M) & CA & AF & MB(A) & MB(M) & CA & AF & MB(A) & MB(M) & CA & AF & MB(A) & MB(M) & CA & AF \\
-%         \midrule
-%         LERP      & 0.848 & 1.787 & 1.420 & 1.859 & 0.055 & 0.128 & 0.091 & 0.154 &  84.20 & 118.90 &  95.68 & 119.58 & 0.401 & 0.397 & 1.010 & 2.049 \\
-%         SLERP     & 0.644 & 1.065 & 0.707 & 0.871 & 0.030 & \underline{0.055} & \underline{0.033} & \underline{0.022} &  62.81 &  48.99 &  37.84 &  26.07 & 0.401 & 0.397 & 1.010 & 2.049 \\
-%         NAO       & 2.868 & 4.299 & 2.121 & 2.443 & 0.163 & 0.164 & 0.154 & 0.173 & 130.54 & 102.64 &  83.05 &  71.47 & 39.244 & 44.302 & 27.623 & 40.178 \\
-%         NoiseDiff & 3.618 & 2.011 & 2.098 & 3.250 & 0.064 & 0.085 & 0.069 & 0.083 & 119.47 &  74.03 &  65.04 &  68.87 & 15.096 & 7.835 & 8.618 & 19.628 \\
-%         GeoDiff   & \underline{0.402} & \underline{1.021} & \underline{0.669} & \underline{0.842} & \underline{0.024} & 0.073 & 0.044 & 0.027 & \underline{28.70} & \underline{38.12} & \underline{35.98} & \underline{25.80} & \underline{0.188} & \underline{0.272} & \underline{0.891} & \underline{1.969} \\
-%         FIM-based & 3.358 & 4.429 & 4.152 & 5.249 & 0.142 & 0.187 & 0.172 & 0.196 &  92.09 &  78.80 &  70.95 &  59.11 & 0.401 & 0.397 & 1.010 & 2.049 \\
-%         \midrule
-%         \textbf{提案} & \textbf{0.380} & \textbf{0.977} & \textbf{0.633} & \textbf{0.767} & \textbf{0.021} & 0.073 & \textbf{0.036} & \textbf{0.023} & \textbf{27.44} & \textbf{36.00} & \textbf{32.54} & \textbf{21.01} & \textbf{0.177} & \textbf{0.201} & \textbf{0.888} & \textbf{1.962} \\
-%         \bottomrule
-%     \end{tabular}
-% \end{table*}
+\begin{table*}[t]
+    \centering
+    \scriptsize
+    \caption{画像補間の定量評価結果．\textbf{太字}が最良，\underline{下線}が次点．}
+    \label{tab:main_results}
+    \setlength{\tabcolsep}{1.99pt}
+    \begin{tabular}{l cccc cccc cccc cccc}
+        \toprule
+        \textbf{手法} &
+            \multicolumn{4}{c}{\textbf{PPL} $\downarrow$} &
+            \multicolumn{4}{c}{\textbf{PDV} $\downarrow$} &
+            \multicolumn{4}{c}{\textbf{FID} $\downarrow$} &
+            \multicolumn{4}{c}{\textbf{RE} $\downarrow$ $(\times10^{-3})$} \\
+        \cmidrule(lr){2-5}\cmidrule(lr){6-9}\cmidrule(lr){10-13}\cmidrule(lr){14-17}
+         & MB(A) & MB(M) & CA & AF & MB(A) & MB(M) & CA & AF & MB(A) & MB(M) & CA & AF & MB(A) & MB(M) & CA & AF \\
+        \midrule
+        LERP      & 0.848 & 1.787 & 1.420 & 1.859 & 0.055 & 0.128 & 0.091 & 0.154 &  84.20 & 118.90 &  95.68 & 119.58 & 0.401 & 0.397 & 1.010 & 2.049 \\
+        SLERP     & 0.644 & 1.065 & 0.707 & 0.871 & 0.030 & \underline{0.055} & \underline{0.033} & \underline{0.022} &  62.81 &  48.99 &  37.84 &  26.07 & 0.401 & 0.397 & 1.010 & 2.049 \\
+        NAO       & 2.868 & 4.299 & 2.121 & 2.443 & 0.163 & 0.164 & 0.154 & 0.173 & 130.54 & 102.64 &  83.05 &  71.47 & 39.244 & 44.302 & 27.623 & 40.178 \\
+        NoiseDiff & 3.618 & 2.011 & 2.098 & 3.250 & 0.064 & 0.085 & 0.069 & 0.083 & 119.47 &  74.03 &  65.04 &  68.87 & 15.096 & 7.835 & 8.618 & 19.628 \\
+        GeoDiff   & \underline{0.402} & \underline{1.021} & \underline{0.669} & \underline{0.842} & \underline{0.024} & 0.073 & 0.044 & 0.027 & \underline{28.70} & \underline{38.12} & \underline{35.98} & \underline{25.80} & \underline{0.188} & \underline{0.272} & \underline{0.891} & \underline{1.969} \\
+        FIM-based & 3.358 & 4.429 & 4.152 & 5.249 & 0.142 & 0.187 & 0.172 & 0.196 &  92.09 &  78.80 &  70.95 &  59.11 & 0.401 & 0.397 & 1.010 & 2.049 \\
+        \midrule
+        \textbf{提案} & \textbf{0.380} & \textbf{0.977} & \textbf{0.633} & \textbf{0.767} & \textbf{0.021} & 0.073 & \textbf{0.036} & \textbf{0.023} & \textbf{27.44} & \textbf{36.00} & \textbf{32.54} & \textbf{21.01} & \textbf{0.177} & \textbf{0.201} & \textbf{0.888} & \textbf{1.962} \\
+        \bottomrule
+    \end{tabular}
+\end{table*}
 
-\subsubsection{結果．}
+\subsubsection{結果}
 \Cref{tab:main_results} に定量評価結果を示す．
 提案手法は PPL，FID，RE の全データセットで最良スコアを達成し，PDV も MB(A) で最良・他で次点を記録した．
 定性的には，LERP はぼやけた補間，NAO・NoiseDiff は元画像にない鮮明なテクスチャと大きな再構成誤差，SLERP は LERP より鮮明だが測地線ベース手法に劣る．
 次点のベースラインである GeoDiff は密度ベースの計量がゆえに測地線が高密度領域へ引き寄せられ，細部が欠落した過平滑化画像を生成する~\cite{Karczewski2025a}．
 提案手法は入力画像の細部を補間全体を通じて保持する．
 
-% \begin{figure}[t]
-%     \centering
-%     \fontsize{6}{7.2}\selectfont
-%     \setlength{\tabcolsep}{2pt}
-%     \renewcommand{\arraystretch}{0}
-%     \newlength{\interpw}
-%     \setlength{\interpw}{8.1cm}
-%     \begin{tabular}{rc}
-%         \rotatebox{90}{\textcolor{BLUE}{LERP}}      & {\includegraphics[width=\interpw]{assets/interpolation/image/5/vangogh_lerp.jpg}}      \\ \addlinespace[1.5pt]
-%         \rotatebox{90}{\textcolor{GREEN}{SLERP}}    & {\includegraphics[width=\interpw]{assets/interpolation/image/5/vangogh_slerp.jpg}}     \\ \addlinespace[1.5pt]
-%         \rotatebox{90}{\textcolor{PURPLE}{NAO}}     & {\includegraphics[width=\interpw]{assets/interpolation/image/5/vangogh_nao.jpg}}       \\ \addlinespace[1.5pt]
-%         \rotatebox{90}{\textcolor{PINK}{NoiseDiff}} & {\includegraphics[width=\interpw]{assets/interpolation/image/5/vangogh_noisediff.jpg}} \\ \addlinespace[1.5pt]
-%         \rotatebox{90}{\textcolor{ORANGE}{GeoDiff}} & {\includegraphics[width=\interpw]{assets/interpolation/image/5/vangogh_geodiff.jpg}}   \\ \addlinespace[1.5pt]
-%         \rotatebox{90}{\textcolor{GRAY}{FIM-based}} & {\includegraphics[width=\interpw]{assets/interpolation/image/5/vangogh_fim.jpg}}       \\ \addlinespace[1.5pt]
-%         \rotatebox{90}{\textcolor{BLACK}{Ours}}     & {\includegraphics[width=\interpw]{assets/interpolation/image/5/vangogh_ours.jpg}}      \\ \addlinespace[1.5pt]
-%                                                       & \includegraphics[scale=0.7]{assets/interpolation/imagelabel.drawio-crop.pdf}                  \\ \addlinespace[1.5pt]
-%                                                       & MorphBench (metamorphosis)                                                                \\ \addlinespace[6.0pt]
-%     \end{tabular}
-%         \caption{
-%         Qualitative examples of interpolated image sequences for MB(M) and AF (Dog).
-%         The images at both ends are the given endpoints $x_0^\sss{0}$ and $x_0^\sss{1}$, and the middle images are the interpolated results $\{\hat{x}_0^\sss{u}\}$ for $u\in[0,1]$.
-%         See also \cref{fig:results_qualitative_appendix} in \cref{appendix:additional_results}.
-%     }
-%     \label{fig:results_qualitative}
-%     % \vspace*{3mm}
-    
-%     % \centering
-%     % \scriptsize
-%     % \setlength{\tabcolsep}{2pt}
-%     % \renewcommand{\arraystretch}{0}
-%     % \begin{tabular}{rc}
-%     %     \raisebox{2.9mm}{MB (A)}    & {\includegraphics[width=10.4cm]{assets/interpolation/image/chair_ours.jpg}}    \\ \addlinespace[1.5pt]
-%     %     \raisebox{2.9mm}{CA}       & {\includegraphics[width=10.4cm]{assets/interpolation/image/female13_ours.jpg}} \\ \addlinespace[1.5pt]
-%     %     \raisebox{2.9mm}{AF (Cat)} & {\includegraphics[width=10.4cm]{assets/interpolation/image/cat6_ours.jpg}}     \\ \addlinespace[1.5pt]
-%     %                                & \includegraphics[scale=0.946]{assets/interpolation/imagelabel.drawio-crop.pdf}                 \\ \addlinespace[1.5pt]
-%     % \end{tabular}
-%     % \caption{Qualitative examples of interpolated image sequences by our method.
-%     %     See also \cref{fig:results_qualitative_appendix} in \cref{appendix:additional_results}.
-%     % }
-%     % \label{fig:results_qualitative2}
-% \end{figure}
+\begin{figure}[t]
+    \centering
+    \fontsize{6}{7.2}\selectfont
+    \setlength{\tabcolsep}{2pt}
+    \renewcommand{\arraystretch}{0}
+    \newlength{\interpw}
+    \setlength{\interpw}{8.02cm}
+    \begin{tabular}{rc}
+        \rotatebox{90}{\hspace{2mm}\textcolor{BLUE}{LERP}}                    & {\includegraphics[width=\interpw]{assets/interpolation/image/5/vangogh_lerp.jpg}}      \\ \addlinespace[1.7pt]
+        \rotatebox{90}{\hspace{1.5mm}\textcolor{GREEN}{SLERP}}                & {\includegraphics[width=\interpw]{assets/interpolation/image/5/vangogh_slerp.jpg}}     \\ \addlinespace[1.7pt]
+        \rotatebox{90}{\hspace{3mm}\textcolor{PURPLE}{NAO}}                   & {\includegraphics[width=\interpw]{assets/interpolation/image/5/vangogh_nao.jpg}}       \\ \addlinespace[1.7pt]
+        \rotatebox{90}{\hspace{0.5mm}\textcolor{PINK}{NoiseDiff}}             & {\includegraphics[width=\interpw]{assets/interpolation/image/5/vangogh_noisediff.jpg}} \\ \addlinespace[1.7pt]
+        \rotatebox{90}{\hspace{1.5mm}\textcolor{ORANGE}{GeoDiff}}             & {\includegraphics[width=\interpw]{assets/interpolation/image/5/vangogh_geodiff.jpg}}   \\ \addlinespace[1.2pt]
+        \rotatebox{90}{\textcolor{GRAY}{FIM\tiny{-based}}}                    & {\includegraphics[width=\interpw]{assets/interpolation/image/5/vangogh_fim.jpg}}       \\ \addlinespace[1.9pt]
+        \rotatebox{90}{\hspace{3mm}\textcolor{BLACK}{Ours}}                   & {\includegraphics[width=\interpw]{assets/interpolation/image/5/vangogh_ours.jpg}}      \\ \addlinespace[1.7pt]
+                                                                              & \includegraphics[scale=0.62]{assets/interpolation/imagelabel.drawio-crop.pdf}          \\ \addlinespace[3.0pt]
+                                                                              & \scriptsize{MorphBench (metamorphosis)}                                                \\ \addlinespace[6.0pt]
+    \end{tabular}
+        \caption{
+            各手法における補間画像列の定性比較．
+            両端は入力画像 $x_0^\sss{0}$, $x_0^\sss{1}$，中間は補間結果 $\{\hat{x}_0^\sss{u}\}$ $(u\in[0,1])$ を示す．
+            その他の結果は付録~\ref{appendix:additional_results}を参照．
+        }
+    \label{fig:results_qualitative}
+\end{figure}
 
 % \begin{figure*}[t]
 %     \centering
@@ -470,95 +448,93 @@ Stable Diffusion v2.1-base~\cite{Rombach2022}（$T=50$）を基盤とし，Morph
 Stable Diffusion v2.1-base~\cite{Rombach2022}（$T=50$）を用い，MS-COCO 2014 検証セット~\cite{Lin2014} のテキストプロンプトから3万枚を生成して，FID~\cite{Martin2017} と CLIP Score~\cite{Radford2021} で評価した．
 比較手法は CFG~\cite{Ho2021} および CFG++~\cite{Chung2025} である．
 
-% \begin{table*}[t]
-%     \centering
-%     \footnotesize
-%     \caption{ガイダンス補正（左）および蒸留（右）の定量評価結果．}
-%     \label{tab:guidance_results}
-%     \begin{minipage}{0.65\textwidth}
-%         \centering
-%         \setlength{\tabcolsep}{6pt}
-%         \begin{tabular}{l cccccc}
-%             \toprule
-%              & \multicolumn{2}{c}{$w=5.0$} & \multicolumn{2}{c}{$w=7.5$} & \multicolumn{2}{c}{$w=12.5$} \\
-%             \cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
-%              & FID $\downarrow$ & CLIP $\uparrow$ & FID $\downarrow$ & CLIP $\uparrow$ & FID $\downarrow$ & CLIP $\uparrow$ \\
-%             \midrule
-%             CFG     & \underline{11.69} & 0.313 & 14.29 & 0.314 & \underline{17.28} & 0.315 \\
-%             CFG++   & 11.87 & 0.313 & \underline{13.98} & 0.314 & 17.76 & 0.315 \\
-%             \midrule
-%             \textbf{提案} & \textbf{11.53} & 0.313 & \textbf{13.81} & 0.314 & \textbf{16.04} & 0.315 \\
-%             \bottomrule
-%         \end{tabular}
-%     \end{minipage}
-%     \hfill
-%     \begin{minipage}{0.30\textwidth}
-%         \centering
-%         \setlength{\tabcolsep}{6pt}
-%         \begin{tabular}{l cc}
-%             \toprule
-%              & FID $\downarrow$ & CLIP $\uparrow$ \\
-%             \midrule
-%             CFG  & 17.91 & 0.306 \\
-%             \textbf{提案} & \textbf{16.98} & 0.306 \\
-%             \bottomrule
-%         \end{tabular}
-%     \end{minipage}
-% \end{table*}
+\begin{table*}[t]
+    \centering
+    \footnotesize
+    \caption{ガイダンス補正（左）および蒸留（右）の定量評価結果．}
+    \label{tab:guidance_results}
+    \begin{minipage}{0.65\textwidth}
+        \centering
+        \setlength{\tabcolsep}{6pt}
+        \begin{tabular}{l cccccc}
+            \toprule
+             & \multicolumn{2}{c}{$w=5.0$} & \multicolumn{2}{c}{$w=7.5$} & \multicolumn{2}{c}{$w=12.5$} \\
+            \cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
+             & FID $\downarrow$ & CLIP $\uparrow$ & FID $\downarrow$ & CLIP $\uparrow$ & FID $\downarrow$ & CLIP $\uparrow$ \\
+            \midrule
+            CFG     & \underline{11.69} & 0.313 & 14.29 & 0.314 & \underline{17.28} & 0.315 \\
+            CFG++   & 11.87 & 0.313 & \underline{13.98} & 0.314 & 17.76 & 0.315 \\
+            \midrule
+            \textbf{提案} & \textbf{11.53} & 0.313 & \textbf{13.81} & 0.314 & \textbf{16.04} & 0.315 \\
+            \bottomrule
+        \end{tabular}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.30\textwidth}
+        \centering
+        \setlength{\tabcolsep}{6pt}
+        \begin{tabular}{l cc}
+            \toprule
+             & FID $\downarrow$ & CLIP $\uparrow$ \\
+            \midrule
+            CFG  & 17.91 & 0.306 \\
+            \textbf{提案} & \textbf{16.98} & 0.306 \\
+            \bottomrule
+        \end{tabular}
+    \end{minipage}
+\end{table*}
 
 
-% \begin{figure}[t]
-%     \centering
-%     \fontsize{6}{7.2}\selectfont
-%     \setlength{\tabcolsep}{1.0pt}
-%     \renewcommand{\arraystretch}{0}
-%     \newlength{\guidimgw}
-%     \setlength{\guidimgw}{1.54cm}
-%     \begin{tabular}{r ccccc}
-%         % Row 1: CFG
-%         \rotatebox{90}{\hspace{6.6mm}CFG}
-%         & \includegraphics[width=\guidimgw]{assets/guidance/146961_cfg.jpg}
-%         & \includegraphics[width=\guidimgw]{assets/guidance/146190_cfg.jpg}
-%         & \includegraphics[width=\guidimgw]{assets/guidance/122838_cfg.jpg}
-%         & \includegraphics[width=\guidimgw]{assets/guidance/0472_cfg.jpg}
-%         & \includegraphics[width=\guidimgw]{assets/guidance/80690_cfg.jpg}
-%         \\ \addlinespace[1.2pt]
-%         % Row 2: CFG++
-%         \rotatebox{90}{\hspace{3mm}CFG++}
-%         & \includegraphics[width=\guidimgw]{assets/guidance/146961_cfgpp.jpg}
-%         & \includegraphics[width=\guidimgw]{assets/guidance/146190_cfgpp.jpg}
-%         & \includegraphics[width=\guidimgw]{assets/guidance/122838_cfgpp.jpg}
-%         & \includegraphics[width=\guidimgw]{assets/guidance/0472_cfgpp.jpg}
-%         & \includegraphics[width=\guidimgw]{assets/guidance/80690_cfgpp.jpg}
-%         \\ \addlinespace[1.2pt]
-%         % Row 3: Ours
-%         \rotatebox{90}{\hspace{6.5mm}Ours}
-%         & \includegraphics[width=\guidimgw]{assets/guidance/146961_ours.jpg}
-%         & \includegraphics[width=\guidimgw]{assets/guidance/146190_ours.jpg}
-%         & \includegraphics[width=\guidimgw]{assets/guidance/122838_ours.jpg}
-%         & \includegraphics[width=\guidimgw]{assets/guidance/0472_ours.jpg}
-%         & \includegraphics[width=\guidimgw]{assets/guidance/80690_ours.jpg}
-%         \\ \addlinespace[2.5pt]
-%         % Prompts
-%          & \parbox{0.9\guidimgw}{\centering ``A man is cooking in a crowded kitchen''}
-%          & \parbox{0.9\guidimgw}{\centering ``A person is in the grass holding a frisbee''}
-%          & \parbox{0.9\guidimgw}{\centering ``A small white bird with a long beak on a branch''}
-%          & \parbox{0.9\guidimgw}{\centering ``A plane flies over water with two islands nearby''}
-%          & \parbox{0.9\guidimgw}{\centering ``A couple of sub sandwiches are in basket''}
-%         \\
-%     \end{tabular}
-%     \caption{
-%         Qualitative comparison between CFG, CFG++, and Ours
-%     }
-%     \label{fig:guidance_qualitative}
-% \end{figure}
+\begin{figure}[t]
+    \centering
+    \fontsize{6}{7.2}\selectfont
+    \setlength{\tabcolsep}{1.0pt}
+    \renewcommand{\arraystretch}{0}
+    \newlength{\guidimgw}
+    \setlength{\guidimgw}{1.54cm}
+    \begin{tabular}{r ccccc}
+        % Row 1: CFG
+        \rotatebox{90}{\hspace{6.6mm}CFG}
+        & \includegraphics[width=\guidimgw]{assets/guidance/146961_cfg.jpg}
+        & \includegraphics[width=\guidimgw]{assets/guidance/146190_cfg.jpg}
+        & \includegraphics[width=\guidimgw]{assets/guidance/122838_cfg.jpg}
+        & \includegraphics[width=\guidimgw]{assets/guidance/0472_cfg.jpg}
+        & \includegraphics[width=\guidimgw]{assets/guidance/80690_cfg.jpg}
+        \\ \addlinespace[1.2pt]
+        % Row 2: CFG++
+        \rotatebox{90}{\hspace{3mm}CFG++}
+        & \includegraphics[width=\guidimgw]{assets/guidance/146961_cfgpp.jpg}
+        & \includegraphics[width=\guidimgw]{assets/guidance/146190_cfgpp.jpg}
+        & \includegraphics[width=\guidimgw]{assets/guidance/122838_cfgpp.jpg}
+        & \includegraphics[width=\guidimgw]{assets/guidance/0472_cfgpp.jpg}
+        & \includegraphics[width=\guidimgw]{assets/guidance/80690_cfgpp.jpg}
+        \\ \addlinespace[1.2pt]
+        % Row 3: Ours
+        \rotatebox{90}{\hspace{6.5mm}Ours}
+        & \includegraphics[width=\guidimgw]{assets/guidance/146961_ours.jpg}
+        & \includegraphics[width=\guidimgw]{assets/guidance/146190_ours.jpg}
+        & \includegraphics[width=\guidimgw]{assets/guidance/122838_ours.jpg}
+        & \includegraphics[width=\guidimgw]{assets/guidance/0472_ours.jpg}
+        & \includegraphics[width=\guidimgw]{assets/guidance/80690_ours.jpg}
+        \\ \addlinespace[2.5pt]
+        % Prompts
+         & \parbox{0.9\guidimgw}{\centering ``A man is cooking in a crowded kitchen''}
+         & \parbox{0.9\guidimgw}{\centering ``A person is in the grass holding a frisbee''}
+         & \parbox{0.9\guidimgw}{\centering ``A small white bird with a long beak on a branch''}
+         & \parbox{0.9\guidimgw}{\centering ``A plane flies over water with two islands nearby''}
+         & \parbox{0.9\guidimgw}{\centering ``A couple of sub sandwiches are in basket''}
+        \\
+    \end{tabular}
+    \caption{
+        Qualitative comparison between CFG, CFG++, and Ours
+    }
+    \label{fig:guidance_qualitative}
+\end{figure}
 
 \subsubsection{結果．}
 \Cref{tab:guidance_results} に示すように，提案手法はすべての CFG スケール $w$ でFIDを一貫して改善し，CLIPスコアは維持した．
 CFG++ はFIDの改善が安定せず，ハイパーパラメータへの感度が示唆される．
 提案ガイダンス補正はガイダンス項のみを修正するため，蒸留時（LCM~\cite{Luo2023}）に適用することで，4ステップ推論においても FID を 17.91 から 16.98 に改善し，推論コストを増やさずに品質向上を学生モデルに継承できることを確認した（5試行すべてで改善，$p < 0.05$）．
-
-\clearpage
 
 \section{結論}
 

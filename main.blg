@@ -3,64 +3,69 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: miru2026j.bst
 Database file #1: main.bib
+Warning--I didn't find a database entry for "7"
+Warning--I didn't find a database entry for "99"
+Warning--I didn't find a database entry for "Choi2020"
 Warning--there's no number and/or volumeAzeglio2025
 Warning--Missing required argument pages in Azeglio2025
 Warning--there's no number and/or volumeBengio2012
 Warning--Missing required argument pages in Bengio2012
 Warning--there's no number and/or volumeFefferman2016
 Warning--Missing required argument pages in Fefferman2016
+Warning--there's no number and/or volumeGeorge2025
+Warning--Missing required argument pages in George2025
 Warning--there's no number and/or volumeGruffaz2025
 Warning--Missing required argument pages in Gruffaz2025
 Warning--there's no number and/or volumeLoaiza-ganem2024
 Warning--Missing required argument pages in Loaiza-ganem2024
+Warning--there's no number and/or volumeLuo2022
+Warning--Missing required argument pages in Luo2022
 Warning--there's no number and/or volumeLuo2023
 Warning--Missing required argument pages in Luo2023
+Warning--there's no number and/or volumePotaptchik2025
+Warning--Missing required argument pages in Potaptchik2025
 Warning--there's no number and/or volumeShoemake1985
 Warning--Missing required argument pages in Shoemake1985
-Warning--there's no number and/or volumeYang2018
-Warning--Missing required argument pages in Yang2018
-Warning--there's no number and/or volumeZhou2018
-Warning--Missing required argument pages in Zhou2018
-You've used 48 entries,
+You've used 51 entries,
             2542 wiz_defined-function locations,
-            897 strings with 14524 characters,
-and the built_in function-call counts, 17612 in all, are:
-= -- 1230
-> -- 1136
+            916 strings with 14908 characters,
+and the built_in function-call counts, 18081 in all, are:
+= -- 1271
+> -- 1127
 < -- 0
-+ -- 465
-- -- 416
-* -- 1280
-:= -- 2727
-add.period$ -- 48
-call.type$ -- 48
-change.case$ -- 303
++ -- 461
+- -- 410
+* -- 1299
+:= -- 2803
+add.period$ -- 51
+call.type$ -- 51
+change.case$ -- 306
 chr.to.int$ -- 0
-cite$ -- 66
-duplicate$ -- 853
-empty$ -- 1291
-format.name$ -- 624
-if$ -- 3705
+cite$ -- 71
+duplicate$ -- 887
+empty$ -- 1367
+format.name$ -- 615
+if$ -- 3816
 int.to.chr$ -- 0
-int.to.str$ -- 48
-missing$ -- 48
-newline$ -- 147
-num.names$ -- 96
-pop$ -- 628
+int.to.str$ -- 51
+missing$ -- 51
+newline$ -- 156
+num.names$ -- 102
+pop$ -- 632
 preamble$ -- 1
-purify$ -- 303
+purify$ -- 306
 quote$ -- 0
-skip$ -- 654
+skip$ -- 693
 stack$ -- 0
-substring$ -- 241
-swap$ -- 48
+substring$ -- 255
+swap$ -- 51
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 192
-warning$ -- 18
-while$ -- 96
-width$ -- 50
-write$ -- 338
+type$ -- 202
+warning$ -- 20
+while$ -- 102
+width$ -- 53
+write$ -- 359
 is.kanji.str$ -- 512
-(There were 18 warnings)
+(There were 23 warnings)

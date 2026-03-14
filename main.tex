@@ -300,23 +300,28 @@ Stanczuk ら~\cite{Stanczuk2024} は，スコア関数 $s_\theta(x_t, t)$ がデ
 \end{proposition}
 \vspace{0.5\baselineskip}
 
-したがって，提案計量はデータ多様体上やその接方向に沿う経路に短い長さを割り当てる（詳細は付録~\ref{appendix:proposition}）．
+したがって，提案計量はデータ多様体上またはその接方向に沿う経路に短い長さを割り当てる（詳細は付録~\ref{appendix:proposition}）．
 
 \subsubsection{測地線}
-測地線はエネルギー汎関数 $E[\gamma]$ を最小化する最短経路である．
-$u \in [0,1]$ で曲線 $\gamma$ をパラメータ化すると，提案計量のエネルギー汎関数は
+測地線は，与えられた計量下での最短経路であり，エネルギー汎関数 $E[\gamma]$ を最小化することで得られる（詳細は付録~\ref{appendix:riemannian_geometry}）．
+パラメータ $u \in [0,1]$ で曲線 $\gamma:u\mapsto\gamma(u)$ をパラメータ化すると，提案計量のエネルギー汎関数は
 \begin{equation}
-    \textstyle
     \label{eq:energy_jacobian_revisit}
     \begin{aligned}
+        \textstyle
         E[\gamma]
-        &= \frac{1}{2}\int_0^1 \|J_{\gamma(u)} \gamma'(u)\|_2^2\, \mathrm{d}u \\
-        &= \frac{1}{2}\int_0^1 \left\|\frac{\partial}{\partial u} s_\theta(\gamma(u), t)\right\|_2^2 \mathrm{d}u.
+        &= \textstyle\frac{1}{2}\int_0^1 \|J_{\gamma(u)} \gamma'(u)\|_2^2\, \mathrm{d}u \\
+        &= \textstyle\frac{1}{2}\int_0^1 \left\|\frac{\partial}{\partial u} s_\theta(\gamma(u), t)\right\|_2^2 \mathrm{d}u.
     \end{aligned}
 \end{equation}
-右辺の最後の表現（連鎖律による）は，測地線がスコア関数 $s_\theta$ の変化量を最小化することを示す．
-スコア関数はログ密度の勾配を符号化するため，スコア変化を最小化する経路は高密度領域へ近づきも離れもせず，多様体に平行な一定の距離を保って推移する．
-これが提案測地線が端点確率を保存する理由の幾何的説明である（\cref{fig:illust}）．
+この式には相補的な二つの解釈がある．
+式~(\ref{eq:energy_jacobian_revisit})の上段は，測地線が各点 $x_t = \gamma(u)$ における速度 $v = \gamma'(u)$ の計量ノルムの2乗 $\|J_{x_t} v\|_2^2$ を最小化することを示す．
+命題1より，これは経路を多様体の接方向に留めるよう働く．
+一方，連鎖律により得られる下段は，測地線が経路に沿ったスコア関数 $s_\theta$ の変動の最小化と等価であることを示している．
+提案計量は $s_\theta$ による引き戻し計量であり，測地線はスコア空間の直線へと写像される．
+スコアは対数密度の勾配であるため，その変動が最小の経路は高密度領域への接近や逸脱を防ぎ，一定距離で多様体と平行に推移する．
+これが，提案測地線が端点の確率を保存する幾何学的理由である（図~\ref{fig:illust}）．
+さらに，対数尤度の勾配が意味表現として用いられる点も考慮すると~\cite{Yeh2018,Charpiat2019,Hanawa2021}，スコアの変動を最小化する測地線は，サンプル間の意味的な近さも保持すると解釈できる．
 
 \subsubsection{理論的備考．}
 提案計量 $G_{x_t} = J_{x_t}^\top J_{x_t}$ はヤコビアンの完全なスペクトル構造，すなわち全ての接線・法線方向を捉える．

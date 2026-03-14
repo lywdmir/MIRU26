@@ -6,6 +6,8 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{proposition}{命題}
 \usepackage{mathtools}
 \usepackage{pifont}
 \usepackage{tabularx}
@@ -281,19 +283,24 @@ $x_t \in \mathbb{R}^D$ をノイズ空間中の点，$v, w \in T_{x_t}\mathbb{R}
 ここで $J_{x_t} = \nabla_{x_t} s_\theta(x_t, t)$ はスコア関数のヤコビアン，$G_{x_t} = J_{x_t}^\top J_{x_t}$ は計量の行列表現である．
 この計量は，スコア空間 $\mathbb{R}^D$ 上のユークリッド計量 $I$ を，スコア関数 $s_\theta$ によって引き戻した計量 $s_\theta^* I$ である．
 
-\subsubsection{解釈．}
-Stanczuk ら~\cite{Stanczuk2024} はスコア関数 $s_\theta(x_t, t)$ がデータ多様体 $\mathcal{M}_t$ に対して直交する方向を向くことを示した．
-Ventura ら~\cite{Ventura2025} はさらにヤコビアン $J_{x_t}$ のスペクトルギャップがデータ多様体の内在次元を反映することを明らかにした．
-直感的には，$J_{x_t}$ は接線方向へは小さく，法線方向へは大きく作用する（\cref{fig:concept}）．
+\subsubsection{解釈}
+Stanczuk ら~\cite{Stanczuk2024} は，スコア関数 $s_\theta(x_t, t)$ がデータ点 $x_t$ を含むデータ多様体 $\mathcal{M}_t$ に対して直交する方向を向くこと，そして時刻 $t$ がゼロに近づくにつれてこの直交性がより顕著になることを示した．
+さらに，Ventura ら~\cite{Ventura2025} はヤコビアン $J_{x_t}$ のスペクトルギャップが，データ多様体の内在次元を反映することを明らかにした．
+直感的には，図~\ref{fig:concept}に示すように，$J_{x_t}$ による作用は接方向には縮小するように働き，法方向の方向には大きく保たれる．
 
-より正確には，$J_{x_t}$ の小さい特異値に対応する右特異ベクトルが張る $d$ 次元部分空間を接線空間 $\mathcal{T}_{x_t}\mathcal{M}_t$，大きい特異値に対応するものが張る空間を法線空間 $\mathcal{N}_{x_t}\mathcal{M}_t$ と定義すると，$T_{x_t}\mathbb{R}^D = \mathcal{T}_{x_t}\mathcal{M}_t \oplus \mathcal{N}_{x_t}\mathcal{M}_t$ が成り立つ．
+より正確には，$\mathcal{M}_t$ を拡散モデルによって学習された時刻 $t$ におけるデータ多様体とし，$x_t \in \mathcal{M}_t$ をその多様体上の点とする．
+また，$J_{x_t}$ の小さい特異値に対応する右特異ベクトルが張る $d$ 次元部分空間（$d \ll D$）を接空間 $T_{x_t}\mathcal{M}_t$，大きい特異値に対応するものが張る直交補空間を法空間 $N_{x_t}\mathcal{M}_t$ と定義する．
+このとき，$T_{x_t}\mathbb{R}^D = T_{x_t}\mathcal{M}_t \oplus N_{x_t}\mathcal{M}_t$ が成り立つ．
+式(1)より，ノイズ空間 $\mathbb{R}^D$ の接ベクトル $v$ に対する計量ノルムの2乗は $g_{x_t}(v, v) = \|J_{x_t} v\|_2^2$ となる．
 
-% \begin{proposition}
-%     \label{thm:equivalence}
-%     固定されたユークリッドノルムを持つ接ベクトル $v$ のうち，計量ノルム $g_{x_t}(v,v) = \|J_{x_t} v\|_2^2$ が最小となるものは，データ多様体 $\mathcal{M}_t$ の接線空間 $\mathcal{T}_{x_t}\mathcal{M}_t$ に属する．
-% \end{proposition}
+\vspace{0.5\baselineskip}
+\begin{proposition}
+    \label{thm:equivalence}
+    固定されたユークリッドノルムを持つ接ベクトル $v$ のうち，計量ノルム $g_{x_t}(v,v) = \|J_{x_t} v\|_2^2$ が最小となるものは，データ多様体 $\mathcal{M}_t$ の接線空間 $\mathcal{T}_{x_t}\mathcal{M}_t$ に属する．
+\end{proposition}
+\vspace{0.5\baselineskip}
 
-したがって，提案計量はデータ多様体上またはその接線方向に沿って推移する経路に短い長さを割り当てる．
+したがって，提案計量はデータ多様体上やその接方向に沿う経路に短い長さを割り当てる（詳細は付録~\ref{appendix:proposition}）．
 
 \subsubsection{測地線}
 測地線はエネルギー汎関数 $E[\gamma]$ を最小化する最短経路である．

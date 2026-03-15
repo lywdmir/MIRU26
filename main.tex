@@ -320,14 +320,18 @@ Stanczuk ら~\cite{Stanczuk2024} は，スコア関数 $s_\theta(x_t, t)$ がデ
 提案計量は，ノイズ空間の各点での局所的な接線・法線分解も与える．
 この分解を利用して，
 CFGのガイダンス項 $\Delta s(x_t, c)$ を補正する問題を以下のように定式化する：補正後のサンプルはユークリッド距離でガイド後サンプルに近く，かつ提案計量 $g$ のもとでガイドなしのサンプルに近い（多様体上に留まる）ようにする：
-\begin{align}
-    \Delta\hat{s}^* = \arg\min_{\Delta\hat{s}}\, &d_E(x_t + \eta_t(s_\theta + \Delta s),\, x_t + \eta_t(s_\theta + \Delta\hat{s}))^2 \notag\\
-    &+ \lambda\, d_g(x_t + \eta_t s_\theta,\, x_t + \eta_t(s_\theta + \Delta\hat{s}))^2.
-\end{align}
+\begin{equation}
+    \begin{aligned}
+    \Delta\hat{s}^*\!\!=\!\!\arg\min_{\Delta\hat{s}} \space\space&d_E(x_t\!+\!\eta_t(s_\theta\!+\!\Delta s),\,x_t\!+\!\eta_t(s_\theta\!+\!\Delta\hat{s}))^2\!\\
+        &+\!\lambda d_g(x_t\!+\!\eta_t s_\theta,\,x_t\!+\!\eta_t(s_\theta\!+\!\Delta\hat{s}))^2,
+    \end{aligned}
+\end{equation}
+
 近似と線形化により，補正は $(I + \lambda G_{x_t})\Delta\hat{s}^* = \Delta s$ を解くことに帰着する．
 これを共役勾配法の1ステップで解くと：
 \begin{equation}
     \label{eq:corrected_guidance}
+    \textstyle
     \Delta\hat{s}^* = \Delta s + \frac{\varepsilon^\top\varepsilon}{\varepsilon^\top(I+\lambda G_{x_t})\varepsilon}\,\varepsilon, \quad \varepsilon = \Delta s - (I+\lambda G_{x_t})\Delta s.
 \end{equation}
 $G_{x_t} = J_{x_t}^\top J_{x_t}$ との積はヤコビアン・ベクトル積と転置ヤコビアン・ベクトル積に分解でき，前者を有限差分で近似する．
